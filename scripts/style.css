@@ -1,0 +1,21 @@
+html {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+html::before {
+  content: "!! Fine awa ghadi !!";
+  font-weight: bold;
+  font-size: 5vw; /* font size (5% of viewport width) */
+  color: #fff;
+}
+
+body {
+  display: none !important;
+}

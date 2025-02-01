@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "The Watcher",
+    "description": "Monitor your usage time",
+    "version": "1.0",
+    "icons": {
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
+    },
+    "background": {
+      "service_worker": "/scripts/monitor.js"
+    },
+    "action": {
+      "default_popup":"/popup/index.html",
+      "default_icon": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-48.png",
+        "128": "images/icon-128.png"
+      }
+    },
+    "permissions": ["activeTab","scripting","storage","tabs"],
+    "content_scripts": [
+    {
+      "css": [
+        "scripts/style.css"
+      ],
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://www.facebook.com/*"
+      ]
+    }
+  ],
+  "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+    
+  }
